@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <div class="text">
+        <h2>Друже! Вітаю у дивовижному світі пригод!</h2>
+    </div>
+    <div class="text">
+        <h2>Давай знайомитись!</h2>
+    </div>
+
+    <form action="/login" method="post">
+        <div class="form">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Введи своє ім'я" type="text">
+        </div>
+        <br>
+        <div class="col-md-12 text-center">
+            <button class="btn btn-lg btn-primary" type="submit">Натискай</button>
+        </div>
+    </form>
+
+
+               {% endblock %}
+

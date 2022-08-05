@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Seven
+{% endblock %}
+
+{% block main %}
+
+    <div class="text">
+        <p id="parag"><b>Так! В КПІ приземлився гелікоптер - подарунок Міністерства оборони України!<br>
+           А біля нього - Ігор Сікорський – всесвітньо відомий авіаконструктор, один з основоположників світової авіаційної техніки. </b>
+        </p>
+    </div>
+
+    <center>
+        <image width="800" src="{{ url_for('static', filename='ph/hely.jpeg')}}"></image>
+    </center>
+    <br>
+
+    <div class="text">
+        <p id="parag">А ще тут є багато цікавого: літаки, танк, музеї, маятник Фуко... Приємної прогулянки!</p>
+    </div>
+    <br>
+
+    <center>
+        <img width="700" src="{{ url_for('static', filename='ph/pl.jpeg')}}"/>
+    </center>
+    <br>
+    <center>
+        <img width="700" src="{{ url_for('static', filename='ph/plane_1.jpeg')}}"/>
+    </center>
+    <br>
+
+    <center>
+        <img width="700" src="{{ url_for('static', filename='ph/title.jpg')}}"/>
+    </center>
+    <br>
+    <center>
+        <img width="700" src="{{ url_for('static', filename='ph/corp_7.jpeg')}}"/>
+    </center>
+    <br>
+    <form action="/fin" method="post">
+       <div class="col-md-12 text-center">
+            <button class="btn btn-lg btn-primary" type="submit">Завершити</button>
+        </div>
+    </form>
+{% endblock %}
+

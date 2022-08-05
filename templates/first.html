@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    First Question
+{% endblock %}
+
+{% block main %}
+
+
+
+
+        <div class="text">
+            <p id="parag"><b>Привіт, {{name}}! <br>
+                Чи знєш ти, що в Києві є свій Гоґвортс,
+                де також здобувають знання, готують зілля, і можливо, грають у квіддич! <br>
+                Сьогодні ти відвідаєш Заборонений Ліс, побуваєш на платформі 9 3/4,
+                познайомишся з майже-справжнім Дамблдором! <br> Рушаймо?</b>
+            </p>
+        </div>
+        <form action="/second" method="post">
+        <div id="start">
+            <button type="submit" class="btn btn-primary btn-lg">Починаймо</button>
+        </div>
+    </form>
+       {% endblock %}
+

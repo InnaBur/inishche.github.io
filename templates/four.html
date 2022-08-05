@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    First Question
+{% endblock %}
+
+{% block main %}
+
+
+
+
+    <div class="text">
+        <p id="parag"><b>Перед тобою - видатний хімік, якому наснилась таблиця хімічних елементів.
+                А за його спиною - хімічний корпус, де відбуваються усілякі чари - запалюється вогонь без сірників, клубочиться туман у склянці і кольорові розчини стають прозорими</b>
+        </p>
+    </div>
+
+    <center>
+        <image width="600" src="{{ url_for('static', filename='ph/corp._1.jpeg')}}"></image>
+    </center>
+        <br>
+
+    <div class="text">
+        <p id="parag"><b>Вирушаємо на пошуки того, хто викрав з Олімпу вогонь і передав його людям...  </b> </p>
+    </div>
+        <br>
+
+    <center>
+        <img width="500" src="{{ url_for('static', filename='ph/map-prom.jpg')}}"  id="MyImage" onclick="makeItFullscreen()"/>
+            <p class="cord">Координати: 50.449826, 30.456727</p>
+    </center>
+
+    <div class="text">
+        <p id="parag"><b>Що за приміщення за спиною Прометея?</b></p>
+    </div>
+
+
+        <div class="form">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="prom" name="prom" placeholder="Назва приміщення" type="text">
+        </div>
+    <br>
+    <form class="col-md-12 text-center">
+        <button class="btn btn-lg btn-primary" type="submit" id="sub">Перевіримо?</button>
+            <p id="answer"></p>
+    </form>
+    <br>
+    <form action="/five" method="post">
+        <div class="col-md-12 text-center">
+            <button  class="btn btn-lg btn-primary" type="submit">Далі!</button>
+        </div>
+    </form>
+
+
+<script>
+
+        document.querySelector('#sub').addEventListener('click', function ()
+        {
+        let input = document.querySelector('input');
+        if (input.value.toUpperCase() === "БІБЛІОТЕКА")
+        {
+            input.style.backgroundColor = 'green';
+            document.querySelector('#answer').innerHTML = 'ПРАВИЛЬНО!';
+        }
+        else
+        {
+            input.style.backgroundColor = 'red';
+            document.querySelector('#answer').innerHTML = 'СПРОБУЙ ЩЕ!';
+        }
+        });
+</script>
+       {% endblock %}
+
+

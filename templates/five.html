@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Five
+{% endblock %}
+
+{% block main %}
+
+    <div class="text">
+        <p id="parag"><b>Прометея зроблено у вигляді блискучих променів, які пронизують чорний метал.
+                        <br>
+                        Він тримає в руках символічне зображення Сонця, куди вмонтовані модулі сонячних батарей.
+                        Це символізує екоенергію майбутнього.<br>
+                        А за спиною у нього - студентська бібліотека, в якій є маятник Фуко!
+                    </b>
+        </p>
+    </div>
+
+    <center>
+        <image width="500" src="{{ url_for('static', filename='ph/prometey.jpeg')}}"></image>
+    </center>
+    <br>
+
+    <div class="text">
+        <p id="parag"><b>Тепер поспішаємо на платформу 9 і 3/4! Наш потяг зачекався!</b></p>
+    </div>
+    <br>
+
+    <center>
+        <img width="700" src="{{ url_for('static', filename='ph/map_par.jpg')}}"/>
+        <p class="cord">Координати: 50.448958, 30.460032</p>
+    </center>
+
+    <div class="text">
+        <p id="parag"><b>Який номер на боці паротяга?</b></p>
+    </div>
+
+    
+        <div class="form">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="par" name="par" placeholder="Номер" type="text">
+        </div>
+        <br>
+
+        <form class="col-md-12 text-center">
+            <button class="btn btn-lg btn-primary" type="submit" id="sub">Перевіримо?</button>
+            <p id="answer"></p>
+        </form>
+        <br>
+        <form action="/six" method="post">
+        <div class="col-md-12 text-center">
+            <button  class="btn btn-lg btn-primary" type="submit">Далі!</button>
+        </div>
+        </form>
+
+
+        <script>
+
+            document.querySelector('#sub').addEventListener('click', function ()
+            {
+            let input = document.querySelector('input');
+            if (input.value === "17485")
+            {
+                input.style.backgroundColor = 'green';
+                document.querySelector('#answer').innerHTML = 'ПРАВИЛЬНО!';
+            }
+            else
+            {
+                input.style.backgroundColor = 'red';
+                document.querySelector('#answer').innerHTML = 'СПРОБУЙ ЩЕ!';
+            }
+            });
+    </script>
+{% endblock %}
+

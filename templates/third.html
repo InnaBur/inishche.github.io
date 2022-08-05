@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    First Question
+{% endblock %}
+
+{% block main %}
+
+
+
+
+        <div class="text">
+            <p id="parag"><b>Так! Це дійсно білочка! Їх тут дуже багато! Наступного разу захопи горішки &#128521
+            </p>
+
+                <center><image width="500" src="{{ url_for('static', filename='ph/sq_2.jpeg')}}"></image></center>
+
+            <p id="parag"><b>Рушай до Київського Дамблдора! <br>
+                І порахуй прямокутники біля нього</b></p>
+            </div>
+            <center>
+                <img width="500" src="{{ url_for('static', filename='ph/map-men.jpg')}}"  id="MyImage" onclick="makeItFullscreen()"/>
+                <p class="cord">Координати: 50.451030, 30.455709</p>
+            </center>
+
+
+                <div class="form">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="dam" name="dam" placeholder="Кількість прямокутників" type="number">
+                </div>
+                <br>
+                <form class="col-md-12 text-center">
+                    <button class="btn btn-lg btn-primary" type="submit" id="sub">Перевіримо?</button>
+                    <p id="answer"></p>
+                </form>
+                <br>
+                <form action="/four" method="post">
+                <div class="col-md-12 text-center">
+                    <button  class="btn btn-lg btn-primary" type="submit">Далі!</button>
+                </div>
+                </form>
+
+
+                <script>
+
+                    document.querySelector('#sub').addEventListener('click', function ()
+                    {
+                     let input = document.querySelector('input');
+                     if (input.value === "2")
+                     {
+                         input.style.backgroundColor = 'green';
+                         document.querySelector('#answer').innerHTML = 'ПРАВИЛЬНО!';
+                     }
+                     else
+                     {
+                         input.style.backgroundColor = 'red';
+                         document.querySelector('#answer').innerHTML = 'СПРОБУЙ ЩЕ!';
+                     }
+                     });
+                 </script>
+       {% endblock %}
+
+
